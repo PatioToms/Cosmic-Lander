@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class bacteria_spawner_script : MonoBehaviour {
 
-    private Animator bacteria_animator;
-    private ParticleSystem spawn_fx;
+    private Animator bacteria_animator; //la variable trigger se llama "activate"
+    private ParticleSystem spawn_fx; 
 
 
 	void Start () {
@@ -15,13 +15,8 @@ public class bacteria_spawner_script : MonoBehaviour {
 
     }
 
-    void SpawnBacteria() {
 
-        bacteria_animator.SetTrigger("activate");
-
-    }
-
-    void SpawnBacteriaFX() {
+    void SpawnBacteria() { //esta función es la que spawnea la propia bacteria, incluyendo los efectos de partículas, sonido, etc.
 
         spawn_fx.Play();
 
