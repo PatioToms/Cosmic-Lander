@@ -12,11 +12,8 @@ public class CamMovement : MonoBehaviour {
     Rigidbody2D playerBody;
     Camera cam;
 
-    private string currentTarget;
-
     private void Start()
     {
-        currentTarget = target.gameObject.name;
         playerBody = target.GetComponent<Rigidbody2D>();
         cam = GetComponentInChildren<Camera>();
     }
@@ -34,8 +31,6 @@ public class CamMovement : MonoBehaviour {
     float maximumZoomSpeed;
 
     float wantedOrtographicSize;
-    [SerializeField]
-    float cameraShake = 0.25f;
 
     void LateUpdate()
     {

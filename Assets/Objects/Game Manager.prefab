@@ -152,9 +152,6 @@ MonoBehaviour:
   mineralCount: 0
   fuel: 1
   fuelBar: {fileID: 0}
-  UIShakeMax: 1
-  UIShakeMin: 0.5
-  UIShakeTime: 0.2
   anim: {fileID: 0}
   scoreWord: {fileID: 0}
 --- !u!114 &114870188428784742

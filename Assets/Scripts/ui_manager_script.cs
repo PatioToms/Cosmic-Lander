@@ -10,9 +10,6 @@ public class ui_manager_script : MonoBehaviour {
 
     [SerializeField] public float fuel;
     [SerializeField] RectTransform fuelBar;
-    [SerializeField] float UIShakeMax;
-    [SerializeField] float UIShakeMin;
-    [SerializeField] float UIShakeTime;
     [SerializeField] Animator anim;
     [SerializeField] Text scoreWord;
 
@@ -75,63 +72,6 @@ public class ui_manager_script : MonoBehaviour {
 
     public void AddEgg()
     {
-        switch (player_movement_script.numMinerals)
-        {
-            case 0:
-                anim.SetBool("Empty", true);
-                anim.SetBool("1 egg", false);
-                anim.SetBool("2 eggs", false);
-                anim.SetBool("3 eggs", false);
-                break;
-            case 1:
-                anim.SetBool("Empty", false);
-                anim.SetBool("1 egg", true);
-                anim.SetBool("2 eggs", false);
-                anim.SetBool("3 eggs", false);
-                break;
-            case 2:
-                anim.SetBool("Empty", false);
-                anim.SetBool("1 egg", false);
-                anim.SetBool("2 eggs", true);
-                anim.SetBool("3 eggs", false);
-                break;
-            case 3:
-                anim.SetBool("Empty", false);
-                anim.SetBool("1 egg", false);
-                anim.SetBool("2 eggs", false);
-                anim.SetBool("3 eggs", true);
-                break;
-        }
-    }
-
-    public void ThrowEgg()
-    {
-        switch (player_movement_script.numMinerals)
-        {
-            case 0:
-                anim.SetBool("Empty", true);
-                anim.SetBool("1 egg", false);
-                anim.SetBool("2 eggs", false);
-                anim.SetBool("3 eggs", false);
-                break;
-            case 1:
-                anim.SetBool("Empty", false);
-                anim.SetBool("1 egg", true);
-                anim.SetBool("2 eggs", false);
-                anim.SetBool("3 eggs", false);
-                break;
-            case 2:
-                anim.SetBool("Empty", false);
-                anim.SetBool("1 egg", false);
-                anim.SetBool("2 eggs", true);
-                anim.SetBool("3 eggs", false);
-                break;
-            case 3:
-                anim.SetBool("Empty", false);
-                anim.SetBool("1 egg", false);
-                anim.SetBool("2 eggs", false);
-                anim.SetBool("3 eggs", true);
-                break;
-        }
+        anim.SetInteger("numEggs", player_movement_script.numMinerals);
     }
 }

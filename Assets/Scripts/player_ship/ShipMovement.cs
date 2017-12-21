@@ -7,10 +7,7 @@ using UnityEngine.PostProcessing;
 public class ShipMovement : MonoBehaviour {
 
     [SerializeField] float magToApplyDamage;
-	[SerializeField] float respawn_lag = 3f;
-	[SerializeField] string level_name = "_Main";
     [SerializeField] GameObject dummy_ship;
-    [SerializeField] GameObject mineralPrefab;
 	[SerializeField] AudioClip[] impact_sounds;
     [SerializeField] Transform magnetPivot;
     public CamShakeManager.Properties shakeProperties;
@@ -89,10 +86,6 @@ public class ShipMovement : MonoBehaviour {
             float vel = rb.velocity.magnitude;
             vel = Mathf.Lerp(vel, 0, frictionByAngle.Evaluate(angleOfVelocity / 180) * friction * Time.deltaTime);
             rb.velocity = rb.velocity.normalized * vel;
-            if (Input.GetButtonDown("ThrowInput") && numMinerals > 0)
-            {
-                ThrowMineral();
-            }
             mag = rb.velocity.magnitude;
         }
     }
@@ -128,14 +121,6 @@ public class ShipMovement : MonoBehaviour {
         //GetComponent<CircleCollider2D>().enabled = true;
         GameObject dummy = Instantiate(dummy_ship, transform.position, transform.rotation);
         dummy.transform.parent = transform;
-    }
-
-    void ThrowMineral()
-    {
-        GameObject mineral = Instantiate(mineralPrefab, magnetPivot.position, transform.rotation);
-        reactorForce += mineral.GetComponent<MineralAttraction>().reactorModifier;
-        numMinerals -= 1;
-        ui_manager.ThrowEgg();
     }
 
     IEnumerator LoadLevel()
