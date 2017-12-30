@@ -14,16 +14,16 @@ public class toxic_cloud_script: MonoBehaviour {
 	
 		renderTexture = GetComponent<Renderer>();
 
-		float TextureScale_X = transform.lossyScale.x * ScaleToTiles;
+		float TextureScale_X = transform.lossyScale.x * ScaleToTiles; //evaluamos la escala del objeto y ajustamos el tileado de su textura
 		float TextureScale_Y = transform.lossyScale.z * ScaleToTiles;
 		renderTexture.material.SetTextureScale ("_MainTex", new Vector2 (TextureScale_X, TextureScale_Y));
 	}
 		
 	void Update() {
 			
-		float offset_X = Time.time * scrollSpeed_X;
+		float offset_X = Time.time * scrollSpeed_X; 
 		float offset_Y = Time.time * scrollSpeed_Y;
-		renderTexture.material.SetTextureOffset ("_MainTex", new Vector2 (offset_X, offset_Y));
+		renderTexture.material.SetTextureOffset ("_MainTex", new Vector2 (-offset_Y, offset_X)); //movemos la textura
 
 	}
 
