@@ -85,7 +85,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4388567315780464}
   - component: {fileID: 60318100066943144}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -556,7 +556,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -935837150
+  randomSeed: 620178320
   InitialModule:
     serializedVersion: 3
     enabled: 1

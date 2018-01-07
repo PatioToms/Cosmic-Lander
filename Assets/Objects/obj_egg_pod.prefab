@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4409144702004458}
   - component: {fileID: 212394705791002222}
   - component: {fileID: 60891367990582718}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: spr_egg_pod_piece_b
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,11 +54,12 @@ GameObject:
   - component: {fileID: 4113651923573530}
   - component: {fileID: 212378986259164878}
   - component: {fileID: 60237108389737176}
-  - component: {fileID: 114162334538384984}
   - component: {fileID: 82578967056715862}
   - component: {fileID: 199937628029232208}
   - component: {fileID: 198045267351376644}
-  m_Layer: 0
+  - component: {fileID: 114264545271585622}
+  - component: {fileID: 114330589321534640}
+  m_Layer: 13
   m_Name: spr_egg_pod_piece_a
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +103,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1482237115995448}
   m_LocalRotation: {x: -0, y: -0, z: 0.00000049173826, w: 1}
-  m_LocalPosition: {x: 303.6, y: -83.8, z: 0}
+  m_LocalPosition: {x: -14.63, y: 0, z: 0}
   m_LocalScale: {x: 1.7068884, y: 1.7068884, z: 1.7068884}
   m_Children:
   - {fileID: 4409144702004458}
@@ -304,7 +305,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114162334538384984
+--- !u!114 &114264545271585622
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -312,12 +313,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1797767163196644}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 539ec2c11a513004fbc8e308b3b66c45, type: 3}
+  m_Script: {fileID: 11500000, guid: 83bb0119d2c26a241a5fcc10894b9f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   minerals_to_spawn: 5
-  red_value: 0.3686
-  heat_resistance: 0.05
   explode_delay: 0.5
   on_destroyed_fx:
   - {fileID: 8300000, guid: 8dcd55edc67bbb44799b3ecad1beade8, type: 3}
@@ -326,6 +325,25 @@ MonoBehaviour:
   mineral_prefab: {fileID: 1507664346215952, guid: 2ec002eefe5dd3c4b82bc5ddf181e148,
     type: 2}
   broken_sprite: {fileID: 21300000, guid: 9c222329d4d89664db1e9e34cc445298, type: 3}
+  animator: {fileID: 95771322205210592}
+--- !u!114 &114330589321534640
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1797767163196644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1cfe733e0501045b8bf456aa66aded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mustSpawnEggs: 1
+  red_value: 0.3686
+  heat_resistance: 0.01
+  explode_delay: 0.5
+  heatingSpr: {fileID: 212378986259164878}
+  animator: {fileID: 95771322205210592}
+  particlesPrefab: {fileID: 0}
 --- !u!198 &198045267351376644
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -386,7 +404,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -358786376
+  randomSeed: 149152422
   InitialModule:
     serializedVersion: 3
     enabled: 1

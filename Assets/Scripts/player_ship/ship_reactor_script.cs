@@ -11,7 +11,7 @@ public class ship_reactor_script : MonoBehaviour {
 	private Rigidbody2D parent_rb;
 	private AudioSource reactor_sound_emitter;
 	private Animator reactor_animator;
-	private ore_script col_script;
+	private HeatObject heatObjectScr;
 	private float reactor_sound_alpha;
 	public bool can_fly = true; //must be public so other scripts can access it
 
@@ -53,9 +53,9 @@ public class ship_reactor_script : MonoBehaviour {
 				can_interact_with_ore = false;
 				reactor_sound_emitter.Stop ();
 
-				if (col_script != null) {
+				if (heatObjectScr != null) {
 				
-					col_script.Stop_Heat ();
+					heatObjectScr.Stop_Heat ();
 				
 				}
 			
@@ -64,29 +64,22 @@ public class ship_reactor_script : MonoBehaviour {
 
 	}
 
-	void OnTriggerStay2D(Collider2D col){
-	
-		col_script = col.GetComponent<ore_script> ();
-
-		if ((col_script != null) && (can_interact_with_ore)){
-
-			col_script.Heat_Up ();
-
-		}
-	
+	void OnTriggerStay2D(Collider2D col)
+    {
+        heatObjectScr = col.gameObject.GetComponent<HeatObject>();
+        if (col.gameObject.layer == 13 && can_interact_with_ore && heatObjectScr != null)
+        {
+            heatObjectScr.Heat_Up();
+        }
 	}
 
-	void OnTriggerExit2D(Collider2D col){
-
-		col_script = col.GetComponent<ore_script> ();
-
-		if ((col_script != null)){
-
-			col_script.Stop_Heat ();
-
+	void OnTriggerExit2D(Collider2D col)
+    {
+        heatObjectScr = col.GetComponent<HeatObject>();
+        if (col.gameObject.layer == 13 && can_interact_with_ore && heatObjectScr != null)
+        {
+            heatObjectScr.Stop_Heat ();
 		}
-			
-
 	}
 
 	public void SeparateParticles(){

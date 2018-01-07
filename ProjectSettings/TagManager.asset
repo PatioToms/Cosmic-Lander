@@ -17,13 +17,13 @@ TagManager:
   - 
   - Background
   - LandZone
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ship
+  - Enemy
+  - Level
+  - Inflamable
+  - ShipReactor
+  - Egg
+  - Magnet
   - 
   - 
   - 

@@ -38,7 +38,8 @@ GameObject:
   - component: {fileID: 4526454406213942}
   - component: {fileID: 58618861638265052}
   - component: {fileID: 95112665200783396}
-  m_Layer: 0
+  - component: {fileID: 114093917757178190}
+  m_Layer: 13
   m_Name: obj_destructible_wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +155,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1291005623291634}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.32, y: 0.7664718, z: -0.0390625}
+  m_LocalPosition: {x: 0.9, y: 0.7664718, z: -0.0390625}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 4378026087778426}
@@ -251,6 +252,25 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114093917757178190
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1291005623291634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1cfe733e0501045b8bf456aa66aded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mustSpawnEggs: 0
+  red_value: 0.3686
+  heat_resistance: 0.04
+  explode_delay: 1
+  heatingSpr: {fileID: 212142141769062970}
+  animator: {fileID: 95112665200783396}
+  particlesPrefab: {fileID: 1125709363758676, guid: 1c8c7be56260d8647b6f65939056bed7,
+    type: 2}
 --- !u!212 &212142141769062970
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -285,8 +305,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6f87dbd5896ab9e43aaed7d69d96bb8f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: c3c0d8372db176343be4df4150579483, type: 3}
+  m_Color: {r: 0.33333334, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

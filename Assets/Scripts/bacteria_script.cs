@@ -9,8 +9,8 @@ public class bacteria_script : MonoBehaviour {
     [SerializeField] GameObject bacteria_explosion; // explosión que daña al jugador cuando está en su rango
 	[SerializeField] float speed = 5f;
 	[SerializeField] AudioClip[] audio_array;
-    [SerializeField] Transform player;
 
+    Transform player;
     Animator bacteria_anim; // el bool que cambia el estado de la bacteria es is_aggro_triggered
 	AudioSource audio_emitter;
 	[SerializeField] ParticleSystem trail_fx;
@@ -19,6 +19,7 @@ public class bacteria_script : MonoBehaviour {
 
 	void Start ()
     {
+        player = GameObject.Find("obj_player_ship").transform;
 		bacteria_anim = this.GetComponent<Animator> ();
 		audio_emitter = this.GetComponent<AudioSource> ();
 	}
@@ -43,14 +44,6 @@ public class bacteria_script : MonoBehaviour {
 				bacteria_anim.SetBool("is_aggro_triggered", true);
 			}
 		}
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.tag == "Player")
-        {
-
-        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

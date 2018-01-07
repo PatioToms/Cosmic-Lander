@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4704408704486420}
   - component: {fileID: 212307168351986770}
   - component: {fileID: 68175777836566724}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: obj_corner_big_a
-  m_TagString: ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

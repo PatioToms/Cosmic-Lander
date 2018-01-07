@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class bacteria_spawner_script : MonoBehaviour {
 
+    [SerializeField] int maxAliveBacterias;
+    [SerializeField] GameObject BacteriaPrefab;
+
     private Animator bacteria_animator; //la variable trigger se llama "activate"
     private ParticleSystem spawn_fx; 
 
 
-	void Start () {
+	void Start ()
+    {
 
         bacteria_animator = GetComponent<Animator>();
         spawn_fx = GetComponent<ParticleSystem>();
@@ -16,8 +20,8 @@ public class bacteria_spawner_script : MonoBehaviour {
     }
 
 
-    void SpawnBacteria() { //esta función es la que spawnea la propia bacteria, incluyendo los efectos de partículas, sonido, etc.
-
+    void SpawnBacteria()
+    { //esta función es la que spawnea la propia bacteria, incluyendo los efectos de partículas, sonido, etc.
         spawn_fx.Play();
 
     }

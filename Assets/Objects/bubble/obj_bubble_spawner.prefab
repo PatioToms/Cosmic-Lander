@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 82807599037833760}
   - component: {fileID: 199187311205442844}
   - component: {fileID: 198698312721842558}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: bubble_spawner_main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1795694504943550}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35.18, y: 0.05, z: 0}
+  m_LocalPosition: {x: 110.69, y: -30.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4308905076030586}
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07cdfe7d79a569548aec8ee637eb7b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawn_timer: 4.5
+  spawn_timer: 5
   bubble_timer: 7
   bubble_prefab: {fileID: 1453001823931960, guid: 2c097bc3cfb340246bf023a2b5d983df,
     type: 2}
@@ -316,7 +316,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -2066635176
+  randomSeed: 1255174057
   InitialModule:
     serializedVersion: 3
     enabled: 1
