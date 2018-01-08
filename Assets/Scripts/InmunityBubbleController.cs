@@ -7,16 +7,17 @@ public class InmunityBubbleController : MonoBehaviour {
     [SerializeField] Vector2[] waypoints;
     [SerializeField] float speed;
 
-    bool transition;
-    public int pointA;
-    int pointB;
+    [HideInInspector] public bool playerProtected;
+
+    int indexA, indexB;
     float timer;
+    bool transition;
 
     private void Start()
     {
-        transition = true;
-        pointA = 0;
-        pointB = 1;
+        indexA = 0;
+        indexB = 1;
+        transform.position = waypoints[0];
     }
 
     private void Update()
@@ -24,19 +25,35 @@ public class InmunityBubbleController : MonoBehaviour {
         if (transition)
         {
             timer += Time.deltaTime;
-            transform.position = Vector3.Lerp(waypoints[pointA], waypoints[pointB], timer * speed);
-            if (timer >= 1)
+            transform.position = Vector3.Lerp(waypoints[indexA], waypoints[indexB], timer * speed);
+            if (transform.position == (Vector3)waypoints[indexB])
             {
-                pointA += 1;
-                pointB += 1;
+                indexA += 1;
+                indexB += 1;
                 timer = 0;
-                if (waypoints[pointB] == null)
-                {
+                if (indexB == waypoints.Length)
                     transition = false;
-                }
-                timer = 0;
             }
         }
     }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(0, 0, 1, .5f);
+        for (int i = 0; i < waypoints.Length; i++)
+        {
+            Gizmos.DrawSphere(waypoints[i], 1);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        transition = true;
+        playerProtected = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        playerProtected = false;
+    }
 }

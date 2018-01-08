@@ -26,11 +26,6 @@ public class ui_manager_script : MonoBehaviour {
         fuel = fuelBar.localScale.y;
     }
 
-    private void Update()
-    {
-
-    }
-
     public void modify_score (float quantity){
 
 		score += quantity;

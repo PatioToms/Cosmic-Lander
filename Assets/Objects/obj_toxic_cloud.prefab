@@ -115,7 +115,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4747856813319186}
   - component: {fileID: 61163809724880788}
-  m_Layer: 0
+  - component: {fileID: 114583860909791986}
+  m_Layer: 17
   m_Name: obj_toxic_cloud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,8 +195,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1995110474669972}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.01, y: 18.04, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 5}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 4187873688530482}
   - {fileID: 4682863568445958}
@@ -419,7 +420,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -443,7 +444,7 @@ MeshCollider:
   m_GameObject: {fileID: 1238693815937092}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Convex: 0
   m_InflateMesh: 0
@@ -457,7 +458,7 @@ MeshCollider:
   m_GameObject: {fileID: 1666949764659570}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Convex: 0
   m_InflateMesh: 0
@@ -471,7 +472,7 @@ MeshCollider:
   m_GameObject: {fileID: 1422616869324952}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Convex: 0
   m_InflateMesh: 0
@@ -485,7 +486,7 @@ MeshCollider:
   m_GameObject: {fileID: 1718544303619116}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Convex: 0
   m_InflateMesh: 0
@@ -499,7 +500,7 @@ MeshCollider:
   m_GameObject: {fileID: 1485749090692628}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Convex: 0
   m_InflateMesh: 0
@@ -533,6 +534,22 @@ MonoBehaviour:
   scrollSpeed_X: -0.05
   scrollSpeed_Y: 0
   ScaleToTiles: 1
+--- !u!114 &114583860909791986
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1995110474669972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c9e11c730974784fb956bf3b94c8ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vignetteSpeed: 0.2
+  delayDamage: 1
+  damage: 0.1
+  bubbleScr: {fileID: 0}
+  profile: {fileID: 11400000, guid: ad0b3684f5153fa43a9ddfd4aa18ac88, type: 2}
 --- !u!114 &114648356953637424
 MonoBehaviour:
   m_ObjectHideFlags: 1
