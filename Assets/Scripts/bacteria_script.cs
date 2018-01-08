@@ -9,7 +9,10 @@ public class bacteria_script : MonoBehaviour {
     [SerializeField] GameObject bacteria_explosion; // explosión que daña al jugador cuando está en su rango
 	[SerializeField] float speed = 5f;
 	[SerializeField] AudioClip[] audio_array;
+    [SerializeField] float growSpeed;
+    [SerializeField] float stopSpeed;
 
+    Rigidbody2D rb;
     Transform player;
     Animator bacteria_anim; // el bool que cambia el estado de la bacteria es is_aggro_triggered
 	AudioSource audio_emitter;
@@ -22,20 +25,22 @@ public class bacteria_script : MonoBehaviour {
         player = GameObject.Find("obj_player_ship").transform;
 		bacteria_anim = this.GetComponent<Animator> ();
 		audio_emitter = this.GetComponent<AudioSource> ();
+        rb = GetComponent<Rigidbody2D>();
 	}
 
     void FixedUpdate()
     {
+        
         if (canFollow)
         {
             Vector2 direction = player.position - transform.position;
-            transform.Translate(direction * speed * Time.fixedDeltaTime);
+            rb.velocity = speed * Vector3.Normalize(direction);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-		if (collision.tag == "Player")
+		if (collision.gameObject.layer == 10)
 		{
 			if (sound_coroutine == null) {
 				sound_coroutine = StartCoroutine (MakeSound ()); 
@@ -48,7 +53,7 @@ public class bacteria_script : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.gameObject.layer == 10)
         {
             canFollow = false;
 			trail_fx.Stop ();
@@ -58,13 +63,14 @@ public class bacteria_script : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.layer == 10)
         {
             Instantiate(bacteria_explosion, transform.position, transform.rotation);
 			trail_fx.Stop ();
 			trail_fx.transform.parent = null;
             GameObject.Find("Game Manager").GetComponent<ui_manager_script>().ApplyDamage(damage);
             //GameObject.Find("Camera").GetComponent<CamShakeManager>().StartShake(shakeProperties);
+
             Destroy(gameObject);
         }
     }
@@ -79,5 +85,4 @@ public class bacteria_script : MonoBehaviour {
 		yield return null;
 	
 	}
-		
 }

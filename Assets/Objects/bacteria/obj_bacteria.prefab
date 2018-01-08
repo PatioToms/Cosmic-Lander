@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 114698655355817368}
   - component: {fileID: 82932667771587576}
   - component: {fileID: 50527536685428020}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: obj_bacteria
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1809161028499582}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 243.7, y: -73.4, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4730672478999020}
@@ -208,8 +208,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 1
+  m_AngularDrag: 1
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -367,14 +367,15 @@ MonoBehaviour:
     rotationPercent: 0
   bacteria_explosion: {fileID: 1003799292280800, guid: 4d2b553f9cc196548afbfe485f8efca9,
     type: 2}
-  speed: 1
+  speed: 10
   audio_array:
   - {fileID: 8300000, guid: 95e5788bc94d55941971d3261f1c8a49, type: 3}
   - {fileID: 8300000, guid: b138d1eee5322b447b84987e3ba40879, type: 3}
   - {fileID: 8300000, guid: 2784fa66987db1f45a4b62bf467554fa, type: 3}
   - {fileID: 8300000, guid: e63e29fa66853664bb0082fd3420828d, type: 3}
   - {fileID: 8300000, guid: 6275effa2139f1d49aaae1e01c9a7e0b, type: 3}
-  player: {fileID: 0}
+  growSpeed: 0.5
+  stopSpeed: 0
   trail_fx: {fileID: 198912150943749644}
 --- !u!198 &198912150943749644
 ParticleSystem:
