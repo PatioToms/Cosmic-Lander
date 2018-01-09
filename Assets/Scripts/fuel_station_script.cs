@@ -22,7 +22,7 @@ public class fuel_station_script : MonoBehaviour {
 
     private void Update()
     {
-        if (current_fuel <= 0)
+        if (current_fuel <= 0 || uiScr.fuel >= 1)
             smoke_particles.Stop();
     }
 
@@ -55,7 +55,7 @@ public class fuel_station_script : MonoBehaviour {
     }
 
     void UpdateGauge()
-    { //función utilizada para actualizar el marcador de gasolina
+    {
 
 		float new_angle = Mathf.Lerp (60, -60, (current_fuel / total_fuel));
 		gauge_transform.eulerAngles = new Vector3(0f, 0f, new_angle);

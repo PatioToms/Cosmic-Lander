@@ -295,14 +295,14 @@ MonoBehaviour:
   vignette:
     m_Enabled: 1
     m_Settings:
-      mode: 0
+      mode: 1
       color: {r: 0.1102941, g: 1, b: 0.33732235, a: 1}
       center: {x: 0.5, y: 0.5}
-      intensity: 0.04594065
+      intensity: 0.56093687
       smoothness: 0.45
       roundness: 1
       mask: {fileID: 0}
-      opacity: 1
+      opacity: 0
       rounded: 1
   dithering:
     m_Enabled: 0

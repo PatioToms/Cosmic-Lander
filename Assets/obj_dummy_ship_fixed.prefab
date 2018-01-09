@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212435714451587700}
   - component: {fileID: 60714044983394876}
   - component: {fileID: 50230607938212308}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: lander_leg_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 212118502423856074}
   - component: {fileID: 60409986030663038}
   - component: {fileID: 50796568787775784}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: lander_leg_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 212744867946390978}
   - component: {fileID: 50879004068453936}
   - component: {fileID: 60051812968265510}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: spr_reactor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 50292942704043896}
   - component: {fileID: 60248287529781000}
   - component: {fileID: 114392340113496280}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: chasis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 212387217322928762}
   - component: {fileID: 50601245122573754}
   - component: {fileID: 60320571471943896}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: magnet_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 212335656659450226}
   - component: {fileID: 50240131164536794}
   - component: {fileID: 60069064355202358}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: magnet_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}

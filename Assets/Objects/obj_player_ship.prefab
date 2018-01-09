@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 60725233871500992}
   - component: {fileID: 114079789673541056}
   - component: {fileID: 82970751030494778}
-  m_Layer: 10
+  m_Layer: 16
   m_Name: Magnet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 60356706485693018}
   m_Layer: 10
   m_Name: spr_magnet_left
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 60825383551610592}
   m_Layer: 10
   m_Name: lander_leg_left
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -332,7 +332,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1040222541308288}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.91, y: -1.76, z: 0}
+  m_LocalPosition: {x: -7.91, y: 7.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4448943815467918}
@@ -1105,12 +1105,12 @@ MonoBehaviour:
     rotationPercent: 0
   fuelCost: 0.001
   reactorForce: 75
-  rotationSpeed: 250
-  rotationSpeedUnderThrust: 100
+  rotationSpeed: 225
+  rotationSpeedUnderThrust: 75
   friction: 1
-  normalGravity: 15
+  normalGravity: 10
   gravityUnderThrust: 1
-  maximumForwardSpeed: 80
+  maximumForwardSpeed: 50
   thrustByForwardSpeed:
     serializedVersion: 2
     m_Curve:
@@ -1250,7 +1250,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1526108611
+  randomSeed: -636716282
   InitialModule:
     serializedVersion: 3
     enabled: 1

@@ -69,7 +69,7 @@ public class bubble_script : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.layer == 10)
         {
             Instantiate(bubble_explosion_prefab, transform.position, transform.rotation);
             GameObject.Find("Game Manager").GetComponent<ui_manager_script>().ApplyDamage(damage);
