@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class VictoryPlatform : MonoBehaviour {
 
-    [SerializeField] Transform ship;
+    [SerializeField] float delayToDeployEgg;
     [SerializeField] Transform destination;
     [SerializeField] Animator animUI;
 
@@ -14,24 +14,32 @@ public class VictoryPlatform : MonoBehaviour {
     ui_manager_script uiScr;
     Animator anim;
     bool transition;
+    bool playerLanded;
+    float oldDelay;
 
     private void Start()
     {
         shipScr = GameObject.Find("obj_player_ship").GetComponent<ShipMovement>();
         uiScr = GameObject.Find("Game Manager").GetComponent<ui_manager_script>();
         anim = GetComponent<Animator>();
+        oldDelay = delayToDeployEgg;
     }
 
     private void Update()
     {
-        if (transition)
+        if (playerLanded)
         {
-            Vector2 direction = destination.position - ship.position;
-            ship.Translate(direction * Time.deltaTime);
+            delayToDeployEgg -= Time.deltaTime;
+            if (delayToDeployEgg <= 0 && shipScr.numMinerals > 0)
+            {
+                shipScr.numMinerals -= 1;
+                uiScr.SetUIEggs(shipScr.numMinerals);
+                delayToDeployEgg = oldDelay;
+            }
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
@@ -44,6 +52,17 @@ public class VictoryPlatform : MonoBehaviour {
                 StartCoroutine(LoadLevel("Lvl_Playtesting"));
             }
         }
+    }*/
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        playerLanded = true;
+        delayToDeployEgg = oldDelay;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        playerLanded = false;
     }
 
     IEnumerator LoadLevel(string name)

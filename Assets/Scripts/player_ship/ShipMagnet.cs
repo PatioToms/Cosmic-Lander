@@ -42,7 +42,7 @@ public class ShipMagnet : MonoBehaviour {
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == "mineral" && inputDown)
+        if (collision.gameObject.layer == 15 && inputDown)
         {
             collision.gameObject.GetComponent<MineralAttraction>().EnableAttraction(pivot);
         }
@@ -50,7 +50,7 @@ public class ShipMagnet : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "mineral" && !inputDown)
+        if (collision.gameObject.layer == 15 && !inputDown)
         {
             collision.gameObject.GetComponent<MineralAttraction>().DisableAttraction();
         }

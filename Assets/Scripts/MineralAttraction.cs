@@ -35,10 +35,12 @@ public class MineralAttraction : MonoBehaviour {
             if (distance <= distanceToTake)
             {
                 Instantiate(getMineralParticlesPrefab, target);
+
                 shipScr.numMinerals += 1;
                 shipScr.reactorForce -= reactorModifier;
                 shipScr.vuelta = true;
-                UIScr.AddEgg();
+                UIScr.SetUIEggs(shipScr.numMinerals);
+
                 Destroy(gameObject);
             }
         }

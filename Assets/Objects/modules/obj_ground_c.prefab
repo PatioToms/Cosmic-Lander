@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4041826175083738}
   - component: {fileID: 212915715319064742}
-  - component: {fileID: 68666353153958886}
+  - component: {fileID: 60179376777034436}
   m_Layer: 12
   m_Name: obj_ground_c
   m_TagString: Untagged
@@ -41,8 +41,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!68 &68666353153958886
-EdgeCollider2D:
+--- !u!60 &60179376777034436
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -54,18 +54,49 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 5.12, y: 5.38}
+    newSize: {x: 5.12, y: 5.38}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   m_Points:
-  - {x: 0.02696228, y: 5.125718}
-  - {x: 0.59490204, y: 5.1522264}
-  - {x: 1.3913879, y: 5.321114}
-  - {x: 1.8677483, y: 5.3876605}
-  - {x: 2.3107376, y: 5.3092895}
-  - {x: 3.0377502, y: 5.012971}
-  - {x: 3.5716743, y: 4.894608}
-  - {x: 4.0389137, y: 4.93106}
-  - {x: 4.778923, y: 5.1051044}
-  - {x: 5.1197624, y: 5.1196866}
+    m_Paths:
+    - - {x: 4.8599997, y: 5.13}
+      - {x: 4.77, y: 5.12}
+      - {x: 4.5499997, y: 5.08}
+      - {x: 4.38, y: 5.0499997}
+      - {x: 4.0699997, y: 4.98}
+      - {x: 3.9499998, y: 4.96}
+      - {x: 3.81, y: 4.93}
+      - {x: 3.6699998, y: 4.92}
+      - {x: 3.57, y: 4.92}
+      - {x: 3.4499998, y: 4.93}
+      - {x: 3.33, y: 4.95}
+      - {x: 3.1499999, y: 5}
+      - {x: 3, y: 5.0499997}
+      - {x: 2.6799998, y: 5.18}
+      - {x: 2.53, y: 5.24}
+      - {x: 2.35, y: 5.3199997}
+      - {x: 2.12, y: 5.37}
+      - {x: 2.09, y: 5.38}
+      - {x: 1.62, y: 5.38}
+      - {x: 1.4499999, y: 5.35}
+      - {x: 1.15, y: 5.29}
+      - {x: 1.06, y: 5.27}
+      - {x: 0.82, y: 5.22}
+      - {x: 0.48, y: 5.17}
+      - {x: 0.37, y: 5.16}
+      - {x: 0.25, y: 5.15}
+      - {x: 0.02, y: 5.14}
+      - {x: 0, y: 5.12}
+      - {x: 0, y: 0}
+      - {x: 5.12, y: 0}
+      - {x: 5.12, y: 5.14}
+      - {x: 5, y: 5.14}
 --- !u!212 &212915715319064742
 SpriteRenderer:
   m_ObjectHideFlags: 1

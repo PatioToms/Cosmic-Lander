@@ -69,4 +69,9 @@ public class ui_manager_script : MonoBehaviour {
     {
         anim.SetInteger("numEggs", player_movement_script.numMinerals);
     }
+
+    public void SetUIEggs(int num)
+    {
+        anim.SetInteger("numEggs", num);
+    }
 }
