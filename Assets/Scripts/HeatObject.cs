@@ -11,6 +11,8 @@ public class HeatObject : MonoBehaviour {
     [SerializeField] SpriteRenderer heatingSpr;
     [SerializeField] Animator animator;
     [SerializeField] GameObject particlesPrefab;
+    [SerializeField] bool mustDestroyObjects;
+    [SerializeField] GameObject[] objectsToDestroy;
     
     bool is_heating_up = false;
     bool has_blown_up = false;
@@ -50,6 +52,13 @@ public class HeatObject : MonoBehaviour {
         animator.SetTrigger("explode");
         yield return new WaitForSeconds(explode_delay);
         Destroy(gameObject);
+        if (mustDestroyObjects)
+        {
+            foreach (GameObject obj in objectsToDestroy)
+            {
+                Destroy(obj);
+            }
+        }
         Instantiate(particlesPrefab, oldTransform.position, oldTransform.rotation);
         yield return null;
     }

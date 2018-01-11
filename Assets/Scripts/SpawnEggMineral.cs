@@ -23,7 +23,7 @@ public class SpawnEggMineral : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag != "mineral")
+        if (collision.gameObject.layer == 12)
         {
             if ((collision.gameObject.tag != "Player") && (mineral_rb.velocity.magnitude >= 0.25f))
             {
@@ -33,12 +33,12 @@ public class SpawnEggMineral : MonoBehaviour {
         }
     }
 
-    public void Destroy_Special()
+    /*public void Destroy_Special()
     {
         if (ui_m != null)
         {
             ui_m.modify_score(value);
         }
         Destroy(gameObject);
-    }
+    }*/
 }

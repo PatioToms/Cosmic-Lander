@@ -26,7 +26,7 @@ public class ShipMovement : MonoBehaviour {
     [HideInInspector] public bool is_dead = false;
     [HideInInspector] public bool can_fly = true;
     [HideInInspector] public int numMinerals;
-    [HideInInspector] public bool vuelta;
+    public bool vuelta;
     AudioSource audio_emitter;
 	Rigidbody2D rb;
     ui_manager_script ui_manager;

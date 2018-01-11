@@ -24,9 +24,9 @@ GameObject:
   - component: {fileID: 50352118322061962}
   - component: {fileID: 114813631810381818}
   - component: {fileID: 114870995865512862}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: obj_mineral_from_Egg
-  m_TagString: mineral
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 20
   strength_x: 75
-  strength_y: 500
+  strength_y: 350
   eggsplosion: {fileID: 1100308731260316, guid: efdc66dfefddcb0429a1becab86bba2c,
     type: 2}
 --- !u!212 &212908342100311672

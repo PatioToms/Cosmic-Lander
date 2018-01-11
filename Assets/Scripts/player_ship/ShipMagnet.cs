@@ -27,10 +27,10 @@ public class ShipMagnet : MonoBehaviour {
             inputDown = true;
         }
 
-		if (Input.GetButton ("MagnetInput") && (ui_manager.fuel > 0)) {
+		/*if (Input.GetButton ("MagnetInput") && (ui_manager.fuel > 0)) {
 			
 			ui_manager.modify_fuel (-fuelCost);
-		}
+		}*/
 
 		if (Input.GetButtonUp("MagnetInput") || (ui_manager.fuel <= 0))
         {

@@ -12,19 +12,22 @@ public class InmunityBubbleController : MonoBehaviour {
     int indexA, indexB;
     float timer;
     bool transition;
+    Animator anim;
 
     private void Start()
     {
         indexA = 0;
         indexB = 1;
         transform.position = waypoints[0];
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
     {
         if (transition)
         {
-            timer += Time.deltaTime;
+            anim.SetTrigger("Move");
+            /*timer += Time.deltaTime;
             transform.position = Vector3.Lerp(waypoints[indexA], waypoints[indexB], timer * speed);
             if (transform.position == (Vector3)waypoints[indexB])
             {
@@ -32,8 +35,17 @@ public class InmunityBubbleController : MonoBehaviour {
                 indexB += 1;
                 timer = 0;
                 if (indexB == waypoints.Length)
+                {
                     transition = false;
+                    Destroy(gameObject);
+                }
+            }*/
+            if(transform.position == (Vector3)waypoints[waypoints.Length - 1])
+            {
+                Destroy(gameObject);
             }
+
+
         }
     }
 

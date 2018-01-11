@@ -7,8 +7,11 @@ using UnityEngine.UI;
 public class VictoryPlatform : MonoBehaviour {
 
     [SerializeField] float delayToDeployEgg;
-    [SerializeField] Transform destination;
     [SerializeField] Animator animUI;
+    [SerializeField] Animator animSemaforo;
+    [SerializeField] Transform destination;
+    [SerializeField] Transform ship;
+    [SerializeField] ParticleSystem platformParticles;
 
     ShipMovement shipScr;
     ui_manager_script uiScr;
@@ -16,6 +19,7 @@ public class VictoryPlatform : MonoBehaviour {
     bool transition;
     bool playerLanded;
     float oldDelay;
+    float semaforoCounter = 4.5f;
 
     private void Start()
     {
@@ -27,14 +31,28 @@ public class VictoryPlatform : MonoBehaviour {
 
     private void Update()
     {
-        if (playerLanded)
+        if (playerLanded && shipScr.vuelta)
         {
+            uiScr.modify_fuel(.003f);
             delayToDeployEgg -= Time.deltaTime;
             if (delayToDeployEgg <= 0 && shipScr.numMinerals > 0)
             {
                 shipScr.numMinerals -= 1;
                 uiScr.SetUIEggs(shipScr.numMinerals);
+                uiScr.modify_score(1);
                 delayToDeployEgg = oldDelay;
+            }
+            if (shipScr.numMinerals == 0)
+            {
+                animSemaforo.SetBool("Enabled", true);
+                semaforoCounter -= Time.deltaTime;
+                if (semaforoCounter <= 0)
+                {
+                    shipScr.enabled = false;
+                    ship.parent = destination;
+                    anim.SetBool("PlatformUp", true);
+                    StartCoroutine(LoadLevel("Lvl_Iteracion"));
+                }
             }
         }
     }
@@ -58,11 +76,15 @@ public class VictoryPlatform : MonoBehaviour {
     {
         playerLanded = true;
         delayToDeployEgg = oldDelay;
+        platformParticles.Play();
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         playerLanded = false;
+        animSemaforo.SetBool("Enabled", false);
+        semaforoCounter = 4.5f;
+        platformParticles.Stop();
     }
 
     IEnumerator LoadLevel(string name)
@@ -75,5 +97,4 @@ public class VictoryPlatform : MonoBehaviour {
         SceneManager.LoadScene(name);
         yield return null;
     }
-
 }

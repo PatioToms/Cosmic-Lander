@@ -25,11 +25,11 @@ MonoBehaviour:
         motionVectorsResolution: 24
         motionVectorsAmplitude: 64
   fog:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
       excludeSkybox: 1
   antialiasing:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       method: 0
       fxaaSettings:
@@ -295,10 +295,10 @@ MonoBehaviour:
   vignette:
     m_Enabled: 1
     m_Settings:
-      mode: 1
-      color: {r: 0.1102941, g: 1, b: 0.33732235, a: 1}
+      mode: 0
+      color: {r: 0, g: 1, b: 0.006896496, a: 1}
       center: {x: 0.5, y: 0.5}
-      intensity: 0.56093687
+      intensity: 0
       smoothness: 0.45
       roundness: 1
       mask: {fileID: 0}
