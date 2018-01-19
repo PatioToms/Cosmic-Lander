@@ -7,6 +7,8 @@ public class ship_reactor_script : MonoBehaviour {
 	[SerializeField] bool can_interact_with_ore = false;
 	[SerializeField] ParticleSystem reactor_flame_particle;
 	[SerializeField] ParticleSystem reactor_smoke_particle;
+	[SerializeField] AudioSource explosion_sound_emitter;
+	[SerializeField] AudioClip[] explosion_sound_array;
 
 	private Rigidbody2D parent_rb;
 	private AudioSource reactor_sound_emitter;
@@ -40,6 +42,8 @@ public class ship_reactor_script : MonoBehaviour {
 			reactor_smoke_particle.Play ();
 			can_interact_with_ore = true;
 			reactor_sound_emitter.Play ();
+			explosion_sound_emitter.clip = explosion_sound_array[Random.Range (0, explosion_sound_array.Length - 1)];
+			explosion_sound_emitter.Play ();
 		
 		}
 

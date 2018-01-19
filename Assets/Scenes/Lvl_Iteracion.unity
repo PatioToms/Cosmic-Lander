@@ -602,7 +602,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 51384782}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -414.79977, y: 239.78773, z: 0}
+  m_LocalPosition: {x: -414.7998, y: 321.97308, z: 0}
   m_LocalScale: {x: 0.24999739, y: 0.24999739, z: 0.24999739}
   m_Children: []
   m_Father: {fileID: 1875000412}
@@ -3844,7 +3844,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 371526654}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -314.29977, y: 144.16762, z: 0}
+  m_LocalPosition: {x: -314.2998, y: 226.35297, z: 0}
   m_LocalScale: {x: 0.6503036, y: 0.65030336, z: 0.65030336}
   m_Children: []
   m_Father: {fileID: 1875000412}
@@ -6613,6 +6613,16 @@ Prefab:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
       value: 6.5823774
       objectReference: {fileID: 0}
+    - target: {fileID: 198275855343715236, guid: e182ac29948a83e4f8cc5ce06962b3d8,
+        type: 2}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 198275855343715236, guid: e182ac29948a83e4f8cc5ce06962b3d8,
+        type: 2}
+      propertyPath: InitialModule.startSizeY.scalar
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e182ac29948a83e4f8cc5ce06962b3d8, type: 2}
   m_IsPrefabParent: 0
@@ -8651,7 +8661,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 775421133}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -421.60007, y: 144.16762, z: 0}
+  m_LocalPosition: {x: -421.6001, y: 226.35297, z: 0}
   m_LocalScale: {x: 0.6503036, y: 0.65030336, z: 0.65030336}
   m_Children: []
   m_Father: {fileID: 1875000412}
@@ -10418,7 +10428,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 931625969}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -415.50003, y: 137.48764, z: 0}
+  m_LocalPosition: {x: -415.5, y: 219.67299, z: 0}
   m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_Children:
   - {fileID: 882564008}
@@ -16195,7 +16205,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1479484810}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -415.49997, y: 96.887634, z: 0}
+  m_LocalPosition: {x: -415.5, y: 179.07298, z: 0}
   m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_Children:
   - {fileID: 1771917438}
@@ -17438,7 +17448,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1559355730}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -414.79977, y: 239.78773, z: 0}
+  m_LocalPosition: {x: -414.7998, y: 321.97308, z: 0}
   m_LocalScale: {x: 0.24999739, y: 0.24999739, z: 0.24999739}
   m_Children: []
   m_Father: {fileID: 1875000412}
@@ -18439,7 +18449,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1696240431}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -414.79977, y: 239.78773, z: 0}
+  m_LocalPosition: {x: -414.7998, y: 321.97308, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children: []
   m_Father: {fileID: 1875000412}
@@ -21019,8 +21029,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1875000411}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 215.65541, y: 87.76292, z: 0}
-  m_LocalScale: {x: 0.43020836, y: 0.43020836, z: 0.43020836}
+  m_LocalPosition: {x: 225.65541, y: 129.26291, z: 0}
+  m_LocalScale: {x: 0.45104167, y: 0.45104167, z: 0.45104167}
   m_Children:
   - {fileID: 2114086595}
   - {fileID: 775421134}
@@ -23941,6 +23951,11 @@ Prefab:
         type: 2}
       propertyPath: reactorForce
       value: 85
+      objectReference: {fileID: 0}
+    - target: {fileID: 82781702477932962, guid: fa479943607459643a8c28347dd1262e,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa479943607459643a8c28347dd1262e, type: 2}
