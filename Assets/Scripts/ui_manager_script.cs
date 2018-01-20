@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class ui_manager_script : MonoBehaviour {
 
+	public static float persistent_score; //this variable will be transfered to the score scene when the game ends
+
 	[HideInInspector] public float score = 0;
     [HideInInspector] public int mineralCount;
 
@@ -21,12 +23,17 @@ public class ui_manager_script : MonoBehaviour {
 
     void Start ()
     {
+
+		persistent_score = 0; //we reset the static variable from the parent class to avoid errors
+
 		player_movement_script = GameObject.Find ("obj_player_ship").GetComponent<ShipMovement> ();
 		player_reactor_script = GameObject.Find ("obj_player_ship").GetComponentInChildren<ship_reactor_script> ();
         fuel = fuelBar.localScale.y;
     }
 
     public void modify_score (float quantity){
+
+		persistent_score += quantity;
 
 		score += quantity;
         scoreWord.text = score.ToString ();
