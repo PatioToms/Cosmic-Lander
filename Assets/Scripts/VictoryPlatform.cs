@@ -51,7 +51,7 @@ public class VictoryPlatform : MonoBehaviour {
                     shipScr.enabled = false;
                     ship.parent = destination;
                     anim.SetBool("PlatformUp", true);
-                    StartCoroutine(LoadLevel("Lvl_Iteracion"));
+                    StartCoroutine(LoadLevel("Lvl_Score"));
                 }
             }
         }

@@ -56,6 +56,7 @@ public class score_scene_script : MonoBehaviour {
 
 		sfx_emitter.clip = reward_sound_array [reward_index];
 		sfx_emitter.volume = 1;
+		sfx_emitter.pitch = 1;
 		sfx_emitter.Play ();
 		reward_text.text = reward_string_array [reward_index];
 		reward_text.color = reward_color_array [reward_index];
