@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class sound_player_script : MonoBehaviour {
 
+	private AudioClip default_clip;
+
 	[SerializeField] private AudioClip other_clip;
 	[SerializeField] private AudioSource sound_emitter;
+
+	void Start(){
+	
+		default_clip = sound_emitter.clip;
+	
+	}
 
 	public void playSound(){
 		
@@ -19,6 +27,7 @@ public class sound_player_script : MonoBehaviour {
 		sound_emitter.clip = other_clip;
 		sound_emitter.pitch = 1f;
 		sound_emitter.Play ();
+		sound_emitter.clip = default_clip;
 	
 	}
 
