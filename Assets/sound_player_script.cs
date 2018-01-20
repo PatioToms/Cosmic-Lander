@@ -27,7 +27,6 @@ public class sound_player_script : MonoBehaviour {
 		sound_emitter.clip = other_clip;
 		sound_emitter.pitch = 1f;
 		sound_emitter.Play ();
-		sound_emitter.clip = default_clip;
 	
 	}
 

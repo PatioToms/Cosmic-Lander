@@ -89,7 +89,7 @@ public class VictoryPlatform : MonoBehaviour {
 
     IEnumerator LoadLevel(string name)
     {
-        animUI.SetBool("Permiso", true);
+        //animUI.SetBool("Permiso", true);
         yield return new WaitForSeconds(3);
         Fading fading = GameObject.Find("Game Manager").GetComponent<Fading>();
         fading.BeginFade(1);

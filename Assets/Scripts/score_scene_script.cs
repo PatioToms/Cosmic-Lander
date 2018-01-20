@@ -22,8 +22,7 @@ public class score_scene_script : MonoBehaviour {
 
 	void Start () {
 
-		//currentscore = Mathf.RoundToInt(ui_manager_script.persistent_score);
-		currentscore = 5;
+		currentscore = Mathf.RoundToInt(ui_manager_script.persistent_score);
 		print (currentscore);
 		reward_index = Mathf.Clamp (Mathf.RoundToInt (currentscore / 3), 0, 3);
 		print (reward_index);
@@ -62,6 +61,8 @@ public class score_scene_script : MonoBehaviour {
 		reward_text.color = reward_color_array [reward_index];
 
 		yield return new WaitForSeconds (sfx_emitter.clip.length / 2);
+
+		canvas_animator.SetTrigger ("ButtonsAppear");
 
 	}
 

@@ -52,4 +52,10 @@ public class menu_manager_script : MonoBehaviour {
 	}	
 
 
+	public void Open_URL(){
+	
+		Application.OpenURL ("https://www.youtube.com/watch?v=VvDsXfnNzjg"); //needs to be replaced with the URL of our survey to avoid online trolling and overall bullying
+	
+	}
+
 }
