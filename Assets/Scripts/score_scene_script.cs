@@ -17,14 +17,16 @@ public class score_scene_script : MonoBehaviour {
  
 	private AudioSource sfx_emitter;
 	private Animator canvas_animator;
-	private float currentscore;
+	float currentscore;
 	private int reward_index;
 
-	// Use this for initialization
 	void Start () {
 
-		currentscore = Mathf.RoundToInt(ui_manager_script.persistent_score);
+		//currentscore = Mathf.RoundToInt(ui_manager_script.persistent_score);
+		currentscore = 5;
+		print (currentscore);
 		reward_index = Mathf.Clamp (Mathf.RoundToInt (currentscore / 3), 0, 3);
+		print (reward_index);
 		canvas_animator = this.GetComponent<Animator> ();
 		sfx_emitter = this.GetComponent<AudioSource> ();
 
@@ -43,15 +45,18 @@ public class score_scene_script : MonoBehaviour {
 
 		for (int i=0; i < currentscore; i++){
 
-			score_text.text = i.ToString ();
 			sfx_emitter.Play ();
-			yield return new WaitForSeconds(0.4f);
+			score_text.text = i.ToString ();
+			yield return new WaitForSeconds(0.3f);
 
 		}
+
+		score_text.text = currentscore.ToString ();
 			
 		yield return new WaitForSeconds (1.5f);
 
 		sfx_emitter.clip = reward_sound_array [reward_index];
+		sfx_emitter.volume = 1;
 		sfx_emitter.Play ();
 		reward_text.text = reward_string_array [reward_index];
 		reward_text.color = reward_color_array [reward_index];
